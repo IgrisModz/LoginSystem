@@ -1,0 +1,56 @@
+﻿<Controls:MetroWindow x:Class="LoginSystem.RegisterWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:local="clr-namespace:LoginSystem"
+                      mc:Ignorable="d"
+                      Title="Register"
+                      TitleCaps="False"
+                      WindowStartupLocation="CenterOwner"
+                      Height="270" Width="300" ResizeMode="CanMinimize">
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="Register">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="User" VerticalAlignment="Center"/>
+                        <TextBox DockPanel.Dock="Top" Margin="3" x:Name="UsernameTxt" KeyUp="RegisterBtn_KeyUp" Controls:TextBoxHelper.Watermark="Username"/>
+                    </DockPanel>
+                    <DockPanel Grid.Row="1">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="InterfacePassword" VerticalAlignment="Center"/>
+                        <PasswordBox DockPanel.Dock="Top" Margin="3" x:Name="PasswordTxt" KeyUp="RegisterBtn_KeyUp" Controls:TextBoxHelper.Watermark="Password"/>
+                    </DockPanel>
+                    <DockPanel Grid.Row="2">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="InterfacePassword" VerticalAlignment="Center"/>
+                        <PasswordBox DockPanel.Dock="Top" Margin="3" x:Name="ConfirmPasswordTxt" KeyUp="RegisterBtn_KeyUp" Controls:TextBoxHelper.Watermark="Confirm password"/>
+                    </DockPanel>
+                    <DockPanel Grid.Row="3">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="Email" VerticalAlignment="Center"/>
+                        <TextBox DockPanel.Dock="Top" Margin="3" x:Name="EmailTxt" KeyUp="RegisterBtn_KeyUp" Controls:TextBoxHelper.Watermark="Email"/>
+                    </DockPanel>
+                    <DockPanel Grid.Row="4">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="Key" VerticalAlignment="Center"/>
+                        <TextBox DockPanel.Dock="Top" Margin="3" x:Name="LicenseTxt" KeyUp="RegisterBtn_KeyUp" Controls:TextBoxHelper.Watermark="License"/>
+                    </DockPanel>
+                    <Button Grid.Row="5" DockPanel.Dock="Top" Margin="3" x:Name="RegisterBtn" Click="RegisterBtn_Click" Controls:ControlsHelper.ContentCharacterCasing="Normal">
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconModern Width="14" Height="14" Kind="UserAdd"/>
+                            <TextBlock Text="Register" Margin="3 0 0 0"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Controls:MetroWindow>

@@ -1,0 +1,58 @@
+﻿<Controls:MetroWindow x:Class="LoginSystem.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:local="clr-namespace:LoginSystem"
+                      mc:Ignorable="d"
+                      Title="LoginSystem"
+                      TitleCaps="False"
+                      WindowStartupLocation="CenterScreen"
+                      Height="240"
+                      Width="268" ResizeMode="CanMinimize">
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="Log In">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="User" VerticalAlignment="Center"/>
+                        <TextBox x:Name="UsernameTxt" DockPanel.Dock="Top" Margin="3" KeyUp="LoginBtn_KeyUp" Controls:TextBoxHelper.Watermark="Username"/>
+                    </DockPanel>
+                    <DockPanel Grid.Row="1">
+                        <iconPacks:PackIconModern DockPanel.Dock="Left" Height="18" Width="18" Kind="InterfacePassword" VerticalAlignment="Center"/>
+                        <PasswordBox x:Name="PasswordTxt" DockPanel.Dock="Top" Margin="3" KeyUp="LoginBtn_KeyUp" Controls:TextBoxHelper.Watermark="Password"/>
+                    </DockPanel>
+                    <WrapPanel Grid.Row="2" DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Label x:Name="ForgotPasswordLbl" Content="Can't rememeber your password?" Margin="0, 3"/>
+                        <Label Target="{Binding ElementName=ForgotPasswordLbl}" Margin="0, 3">
+                            <Hyperlink NavigateUri="http://www.google.com" RequestNavigate="Hyperlink_RequestNavigate" ToolTip="Forgot password" TargetName="Click here">
+                                Click here
+                            </Hyperlink>
+                        </Label>
+                    </WrapPanel>
+                    <Button Grid.Row="3" x:Name="LoginBtn" DockPanel.Dock="Top" Margin="3" Click="LoginBtn_Click" Controls:ControlsHelper.ContentCharacterCasing="Normal">
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconModern Width="14" Height="14" Kind="Connect"/>
+                            <TextBlock Text="Login" Margin="3 0 0 0"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Row="4" x:Name="RegisterBtn" DockPanel.Dock="Top" Margin="3" Click="RegisterBtn_Click" Controls:ControlsHelper.ContentCharacterCasing="Normal">
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconModern Width="14" Height="14" Kind="UserAdd"/>
+                            <TextBlock Text="Register" Margin="3 0 0 0"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Controls:MetroWindow>
